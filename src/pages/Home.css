@@ -58,6 +58,15 @@
   color: var(--text-faint);
 }
 
+.hero-visual {
+  width: 100%;
+  max-width: 720px;
+  margin-top: 56px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 70px rgba(124, 111, 240, 0.18);
+}
+
 /* ── shared section heading ── */
 .section h2 {
   font-size: 36px;
@@ -124,6 +133,12 @@
 }
 
 .solution-card-highlight .eyebrow { color: var(--violet); }
+
+.solution-card-img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+}
 
 .solution-card h3 {
   font-size: 19px;
