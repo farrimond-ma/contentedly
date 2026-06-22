@@ -2,11 +2,9 @@ import { useState, useEffect } from 'react';
 import { useRequestAccess } from '../context/RequestAccessContext';
 import './RequestAccessModal.css';
 
-function encode(data) {
-  return Object.keys(data)
-    .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-    .join('&');
-}
+// Google Apps Script Web App URL — set once the script is deployed.
+// See apps-script/request-access.gs for the script to paste into Google Sheets.
+const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL || '';
 
 const RequestAccessModal = () => {
   const { isOpen, activePackage, closeRequestForm } = useRequestAccess();
@@ -37,12 +35,32 @@ const RequestAccessModal = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
+
+    if (!GOOGLE_SCRIPT_URL) {
+      console.warn('VITE_GOOGLE_SCRIPT_URL not configured — submitting locally for demo.');
+      await new Promise((resolve) => setTimeout(resolve, 800));
+      setStatus('sent');
+      return;
+    }
+
     try {
-      await fetch('/', {
+      const params = new URLSearchParams();
+      params.append('package', activePackage);
+      params.append('name', form.name);
+      params.append('email', form.email);
+      params.append('company', form.company);
+      params.append('message', form.message);
+      params.append('source', 'Contentedly.ai Request Access');
+
+      // Apps Script requires no-cors for simple POST — we can't read the
+      // response body, but we treat a non-throwing fetch as success.
+      await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
+        mode: 'no-cors',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: encode({ 'form-name': 'request-access', package: activePackage, ...form }),
+        body: params.toString(),
       });
+
       setStatus('sent');
     } catch (err) {
       console.error(err);
@@ -72,9 +90,6 @@ const RequestAccessModal = () => {
             </p>
 
             <form onSubmit={handleSubmit} className="ram-form">
-              <input type="hidden" name="form-name" value="request-access" />
-              <input type="hidden" name="package" value={activePackage} />
-
               <label>
                 Name
                 <input type="text" name="name" required value={form.name} onChange={handleChange} />

@@ -12,20 +12,6 @@
   </head>
   <body>
     <div id="root"></div>
-
-    <!--
-      Hidden static form for Netlify's build-time form detection.
-      Field names must exactly match RequestAccessForm.jsx's fields.
-      The real form is rendered by React and submitted via fetch().
-    -->
-    <form name="request-access" data-netlify="true" hidden>
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <input type="text" name="company" />
-      <input type="text" name="package" />
-      <input type="text" name="message" />
-    </form>
-
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
