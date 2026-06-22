@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contentedly.ai is a fully autonomous AI content engine that writes, publishes and distributes content for your business every day — without you lifting a finger. One-time payment. No monthly fees." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <title>Contentedly.ai — Set It Up Once. Publish Forever.</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!--
+      Hidden static form for Netlify's build-time form detection.
+      Field names must exactly match RequestAccessForm.jsx's fields.
+      The real form is rendered by React and submitted via fetch().
+    -->
+    <form name="request-access" data-netlify="true" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="company" />
+      <input type="text" name="package" />
+      <input type="text" name="message" />
+    </form>
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
