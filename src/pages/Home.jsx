@@ -16,6 +16,7 @@ const HOW_IT_WORKS = [
 ];
 
 const FAQ_ITEMS = [
+  { q: 'What is "AI visibility" and why does it matter?', a: 'When someone asks ChatGPT, Perplexity, Claude, or Gemini a question like "who offers bridging finance in the UK?", the AI gives an answer — and that answer either includes your business or it doesn\'t. Most businesses have no idea what AI is telling their prospects. Contentedly checks this every week across 80 real customer questions, tracks whether you or your competitors get mentioned, and automatically writes new content to close the gap. This is genuinely new ground — almost no competitor offers it.' },
   { q: 'Do I need to be technical to use this?', a: 'For the DIY package, you need basic comfort with GitHub — creating a repository, adding files, setting up environment variables. No coding required. If you can follow a recipe, you can follow the setup guide. For the DFY package, you don’t need any technical knowledge at all. We handle everything.' },
   { q: 'What does it actually cost to run once it’s set up?', a: 'Under £1 per day in API costs. That covers two full blog articles, all social posts, and all monitoring. The main costs are OpenAI (article writing and images) and Anthropic Claude (social copy and humanisation). You pay these directly to the providers — there’s no markup from us.' },
   { q: 'What if I only have a website and no social media presence?', a: 'The content engine can run with just a website and one or two social platforms to start. You don’t need to be on every platform — we configure it for where you actually are.' },
@@ -110,7 +111,7 @@ const Home = () => {
             emails for you. And it does all of this for <strong>less than £1 a day</strong> in running costs.
           </p>
 
-          <div className="solution-grid">
+          <div className="solution-grid solution-grid-4">
             <div className="solution-card card">
               <span className="eyebrow">Content</span>
               <h3>Writes like a human. Publishes like a machine.</h3>
@@ -121,10 +122,15 @@ const Home = () => {
               <h3>Every platform. Every day. Zero effort.</h3>
               <p>Facebook, LinkedIn, Instagram, Pinterest — each post written in the right tone for that platform, using your latest article, posted automatically. Facebook Reels and video content included.</p>
             </div>
+            <div className="solution-card card solution-card-highlight">
+              <span className="eyebrow">AI Visibility</span>
+              <h3>Are you the answer when AI gets asked?</h3>
+              <p>Every week, 80 real customer questions are fired at ChatGPT, Perplexity, Claude, and Gemini. The system checks whether your business gets mentioned — and whether your competitors are mentioned instead. Wherever you're missing, a new article gets queued automatically to close the gap. Most businesses have no idea what AI is telling their prospects. You will.</p>
+            </div>
             <div className="solution-card card">
-              <span className="eyebrow">Intelligence</span>
-              <h3>It knows what's working. And fixes what isn't.</h3>
-              <p>Weekly AI visibility reports show how often your business appears in AI-generated answers. Weekly Search Console data shows which keywords to push. The system adjusts its own content calendar in response.</p>
+              <span className="eyebrow">Keyword Intelligence</span>
+              <h3>It knows what people are searching for. And what you're missing.</h3>
+              <p>Weekly Google Search Console data reveals page-2 keywords you're almost ranking for, high-impression pages losing clicks, and search terms with real demand but no article yet. The system researches and schedules new keyword-targeted content automatically — no manual keyword research required.</p>
             </div>
           </div>
         </div>
@@ -164,8 +170,8 @@ const Home = () => {
             <div className="proof-stat"><strong>4</strong><span>Social platforms posted to automatically</span></div>
             <div className="proof-stat"><strong>&lt;£1</strong><span>Daily running cost</span></div>
             <div className="proof-stat"><strong>0</strong><span>Human writing hours required</span></div>
-            <div className="proof-stat"><strong>Weekly</strong><span>AI visibility monitoring across 4 models</span></div>
-            <div className="proof-stat"><strong>Weekly</strong><span>Google Search Console keyword tracking</span></div>
+            <div className="proof-stat"><strong>80</strong><span>Real customer prompts checked weekly across ChatGPT, Perplexity, Claude &amp; Gemini</span></div>
+            <div className="proof-stat"><strong>Weekly</strong><span>Search Console keyword research, fully automated</span></div>
           </div>
 
           <p className="lead" style={{ marginTop: 32 }}>
