@@ -62,14 +62,6 @@ const Home = () => {
           <p className="hero-trust">
             Built by a business owner. Proven on a live business. No monthly fees. No retainer. You own it forever.
           </p>
-
-          <img
-            src="/images/hero-dashboard.webp"
-            alt="Abstract illustration of the autonomous content engine dashboard"
-            className="hero-visual"
-            width="1000"
-            height="746"
-          />
         </div>
       </section>
 
@@ -131,13 +123,6 @@ const Home = () => {
               <p>Facebook, LinkedIn, Instagram, Pinterest — each post written in the right tone for that platform, using your latest article, posted automatically. Facebook Reels and video content included.</p>
             </div>
             <div className="solution-card card solution-card-highlight">
-              <img
-                src="/images/ai-visibility-radar.webp"
-                alt="Abstract illustration of AI search visibility tracking"
-                className="solution-card-img"
-                width="500"
-                height="373"
-              />
               <span className="eyebrow">AI Visibility</span>
               <h3>Are you the answer when AI gets asked?</h3>
               <p>Every week, 80 real customer questions are fired at ChatGPT, Perplexity, Claude, and Gemini. The system checks whether your business gets mentioned — and whether your competitors are mentioned instead. Wherever you're missing, a new article gets queued automatically to close the gap. Most businesses have no idea what AI is telling their prospects. You will.</p>
